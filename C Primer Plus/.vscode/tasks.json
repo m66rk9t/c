@@ -1,0 +1,35 @@
+{
+        "version": "2.0.0",
+        "command": "g++",
+        "args": [
+            "-g",
+            "${file}",
+            "-g",
+            /*添加多源代码文件的路径*/
+            "D:\\Exercises\\CExercises\\C Primer Plus\\Chapter9\\9.11\\hotel.c",
+            "D:\\Exercises\\CExercises\\C Primer Plus\\Chapter12\\12.02\\pe12-2a.c",
+            "D:\\Exercises\\CExercises\\C Primer Plus\\Chapter12\\12.03\\pe12-2a.c",
+            "D:\\Exercises\\CExercises\\C Primer Plus\\Chapter12\\12.07\\diceroll.c",
+            "-o",
+            "${fileDirname}/${fileBasenameNoExtension}.exe"
+        ],
+        "problemMatcher": {
+            "owner": "cpp",
+            "fileLocation": [
+                "relative",
+                "${workspaceRoot}"
+            ],
+            "pattern": {
+                "regexp": "^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$",
+                "file": 1,
+                "line": 2,
+                "column": 3,
+                "severity": 4,
+                "message": 5
+            }
+        },
+        "group": {
+            "kind": "build",
+            "isDefault": true
+        }
+    }
