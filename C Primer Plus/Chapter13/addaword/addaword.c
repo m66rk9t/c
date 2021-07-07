@@ -1,6 +1,6 @@
 /* addaword.c -- 使用fprintf()、fscanf()和rewind() */
 #include <stdio.h>
-#include <stdlib.h>
+#include <stdlib.h> /*提供exit()原型*/
 #include <string.h>
 #define MAX 41 /*待输入单词的最大长度*/
 
@@ -9,7 +9,7 @@ int main(void)
     FILE *fp;        /*声明指向FILE的指针*/
     char words[MAX]; /*储存输入的单词*/
 
-    /*打开文件*/
+    /*以追加更新模式打开文件，打开失败则提示错误并异常结束程序*/
     if ((fp = fopen("wordy", "a+")) == NULL)
     {
         fprintf(stdout, "Can't open \"wordy\" file.\n");
@@ -20,7 +20,9 @@ int main(void)
     puts("Enter words to add to the file; press the #");
     puts("key at the beginning of a line to terminate.");
 
-    /*输入内容*/
+    /*读写操作*/
+    /*while入口条件：读取指定流中的格式化输入并写入指定字符串数组*/
+    /*while循环体：从指定文件中把格式化输出写入指定流*/
     while ((fscanf(stdin, "%40s", words) == 1) && (words[0] != '#'))
         fprintf(fp, "%s\n", words);
 
