@@ -32,7 +32,7 @@ int main(void)
 
 #### 下面是一些输出示例：
 
-```markdown
+```
 Enter 0 for metric mode, 1 for US mode: 0
 Enter distance traveled in kilometers: 600
 Enter fuel consumed in liters: 78.8
@@ -62,7 +62,7 @@ Done!
 
 #### 12.07 编写一个程序，修改本章投掷骰子的程序，使其输出类似：
 
-```markdown
+```
 Enter the number of sets; enter q to stop : 18
 How many sides and how many dice? 6 3
 Here are 18 sets of 3 6-sides throws.
@@ -107,7 +107,7 @@ int main(void)
 
 #### 12.09 编写一个符合以下描述的函数。首先，询问用户需要输入多少个单词。然后，接收用户输入的单词，并显示出来，使用malloc()并回答第1个问题（即要输入多少个单词），创建一个动态数组，该数组内含相应的指向char的指针（注意，由于数组的每个元素都是指向char的指针，所以用于储存malloc()返回值的指针应该是一个指向指针的指针，且它所指向的指针指向char）。在读取字符串时，该程序应该把单词读入一个临时的char数组，使用malloc()分配足够的存储空间来储存单词，并把地址存入该指针数组（该数组中每个元素都是指向char的指针）。然后，从临时数组中把单词拷贝到动态分配的存储空间中。因此，有一个字符指针数组，每个指针都指向一个对象，该对象的大小正好能容纳被储存的特定单词。下面时该程序的一个运行示例：
 
-```markdown
+```
 How many words do you wish to enter? 5
 Enter 5 words now:
 I enjoyed doing this exercise
