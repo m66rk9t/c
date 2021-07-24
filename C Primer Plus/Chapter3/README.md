@@ -4,14 +4,14 @@
 
 #### 3.02 编写一个程序，发出一声警报，然后打印下面的文本：
 
-```markdown
+```
 Startled by the sudden sound,Sally shouted,
 "By the Great Pumpkin, what was that!"
 ```
 
 #### 3.03 编写一个程序，读取一个浮点数，先打印成小数点形式，再打印成指数形式。如果系统支持，再打印成p计数法（十六进制计数法）按以下格式输出：
 
-```markdown
+```
 Please enter a floating-point number:64.25
 fixed-point nation:64.250000
 exponential nation:6.425000e+01
