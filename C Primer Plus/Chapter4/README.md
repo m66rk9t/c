@@ -2,7 +2,7 @@
 
 #### 4.01 编写一个程序，使用limits.h和float.h头文件中定义的明示常量，输出结果示例：
 
-```markdown
+```
 Some number limits for this system:
 Biggest int:2147483647
 Smallest long long:-9223372036854775808
@@ -56,14 +56,14 @@ float epsilon = 1.192093e-07
 
 #### 4.06 编写一个程序，显示printf()函数的返回值，输出结果示例：
 
-```markdown
+```
 UnicornBettle LYF!
 The printf() function printde 19 characters.
 ```
 
 #### 4.07 编写一个程序，演示scanf()函数，输出结果示例：
 
-```markdown
+```
 Please enter your Name,Age,Height:
 LiYifan 21 1.71
 Name:LiYifan
@@ -81,21 +81,21 @@ Height:1.71m
 
 #### 4.10 编写一个程序，读取一个浮点数，首先以一般计数法打印，然后以指数计数法打印，输出结果示例：
 
-```markdown
+```
 a.The input is 21.3 or 2.1e+001.
 b.The input is +21.290 or 2.129E+001.
 ```
 
 #### 4.11 编写一个程序，提示用户输入以兆位每秒（Mb/s）为单位的下载速度和以兆字节（MB）为单位的文件大小。程序中应计算文件的下载时间。注意，这里1字节等于8位。使用float类型，并用/作为除号。该程序要以下面的格式打印3个变量的值（下载速度、文件大小和下载时间），显示小数点后两位数字。输出结果示例：
 
-```markdown
+```
 At 18.12 megabits per seconds, a file of 2.20 megabytes
 downloads in 0.97 seconds.
 ```
 
 #### 4.12 编写一个程序，先提示用户输入名，然后提示用户输入姓。在一行打印用户输入的名和姓，下一行分别打印名和姓的字母数。字母数要与相应名和姓的结尾对齐。接下来，再打印相同的信息，但是字母数与相应名和姓的开头对齐，示例：输出结果示例：
 
-```markdown
+```
 Yifan Li
     5  2
 Li Yifan
