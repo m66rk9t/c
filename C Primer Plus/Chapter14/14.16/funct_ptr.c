@@ -3,7 +3,6 @@
 #include <string.h>
 #include <ctype.h>
 #define LEN 81
-char *s_gets(char *st, int n);            //读取输入字符串的函数原型
 char showmenu(void);                      //显示菜单的函数原型
 void eatline(void);                       //清理输入行的函数原型
 void show(void (*fp)(char *), char *str); //函数指针作参数，使用指定函数处理字符串的函数原型
@@ -11,6 +10,7 @@ void ToUpper(char *);                     //把字符串所有字母字符转换
 void ToLower(char *);                     //把字符串所有字母字符转换成大写的函数原型
 void Transpose(char *);                   //把字符串大小写字母字符转置的函数原型
 void Dummy(char *);                       //不对字符串作任何处理的函数原型
+char *s_gets(char *st, int n);            //读取输入字符串的函数原型
 
 int main(void)
 {
