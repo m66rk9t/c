@@ -1,0 +1,34 @@
+/* complit.c -- 使用复合字面量 */
+#include <stdio.h>
+#define MAXTITL 41
+#define MAXAUTL 31
+
+struct book
+{
+    char title[MAXTITL];
+    char author[MAXAUTL];
+    float value;
+}; //结构声明
+
+int main(void)
+{
+    struct book readfirst; //声明book类型的结构变量
+    int score;
+
+    printf("Enter test score: ");
+    scanf("%d", &score);
+
+    if (score >= 84)
+        readfirst = (struct book){"Crime and Punishment",
+                                  "Fyodor Dostoyevsky",
+                                  11.25}; //使用复合字面量初始化结构变量
+    else
+        readfirst = (struct book){"Mr. Bouncy's Nice Hat",
+                                  "Fred Winsome",
+                                  5.99}; //使用复合字面量初始化结构变量
+    printf("Your assigned reading:\n");
+    printf("%s by %s: $%.2f\n", readfirst.title,
+           readfirst.author, readfirst.value);
+
+    return 0;
+}
