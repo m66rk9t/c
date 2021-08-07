@@ -15,13 +15,13 @@ int main(int argc, char *argv[])
         exit(EXIT_FAILURE);
     }
 
+    /*使用四个按位运算符*/
     printf("~(%s):", argv[1]);
     bitopposite(argv[1]);
     printf("%s\n", argv[1]);
     printf("~(%s):", argv[2]);
     bitopposite(argv[2]);
     printf("%s\n", argv[2]);
-
     bitopposite(argv[1]);
     bitopposite(argv[2]);
     bitand(argv[1], argv[2]);
