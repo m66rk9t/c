@@ -1,4 +1,4 @@
-/* align.c -- 使用_Alignof和_Alignas(C11)*/
+/* align.c -- C11特性，使用_Alignof和_Alignas*/
 
 #include <stdio.h>
 int main(void)
