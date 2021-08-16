@@ -28,7 +28,7 @@ double *new_d_array(int n, ...)
     double *arr;
     va_list vl;
 
-    arr = malloc(n * sizeof(double)); //为数组分配内存
+    arr = (double *)malloc(n * sizeof(double)); //为数组分配内存
     va_start(vl, n);                  //初始化参数列表
 
     for (int i = 0; i < n; i++)
