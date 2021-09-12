@@ -22,7 +22,7 @@ Evaluating SQUARE(++x): The result is 49.
 After incrementing, x is 7.
 ```
 
-#### 16.03 使用#预处理运算符在字符串中替换参数，输出示例：
+#### 16.03 使用#预处理运算符替换字符串中的参数，输出示例：
 
 ```
 The square of y is 25.
