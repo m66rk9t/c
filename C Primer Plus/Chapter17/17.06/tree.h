@@ -1,4 +1,4 @@
-/* tree.h -- 二叉查找树，树中不允许由重复的项r*/
+/* tree.h -- 二叉查找树，树中不允许由重复的项*/
 #ifndef _TREE_H_
 #define _TREE_H_
 #include <stdbool.h>

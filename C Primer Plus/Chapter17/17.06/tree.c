@@ -1,4 +1,4 @@
-/* tree.c -- 二叉树接口的实现*/
+/* tree.c -- 二叉查找树接口的实现*/
 #include <string.h>
 #include <stdio.h>  //提供strcmp()原型
 #include <stdlib.h> //提供malloc()和free()原型

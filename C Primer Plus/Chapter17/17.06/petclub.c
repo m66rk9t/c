@@ -1,4 +1,4 @@
-/*petclub.c -- 使用二叉树*/
+/*petclub.c -- 使用二叉查找树*/
 /*与tree.c一起编译*/
 #include <stdio.h>
 #include <string.h>
