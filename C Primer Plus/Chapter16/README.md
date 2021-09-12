@@ -9,7 +9,7 @@ Consistency is the last refuge of the unimaginative. - Oscar Wilde
 TWO: OW
 ```
 
-#### 16.02 创建并使用类宏函数，输出示例：
+#### 16.02 使用类宏函数，输出示例：
 
 ```
 x = 5
