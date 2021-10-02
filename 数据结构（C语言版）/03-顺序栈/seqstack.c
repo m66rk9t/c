@@ -23,9 +23,22 @@ void DestoryStack(SeqStack *pStack)
     pStack->base = NULL;
 }
 
-void ClearStack(SeqStack *pStack)
+bool ClearStack(SeqStack *pStack)
 {
-    //你说你有什么用啊你？？？
+    Elem *pDelElem, *pNextElem;
+
+    if (StackIsNull(pStack))
+        return false;
+
+    pNextElem = pStack->top - 1;
+
+    while (pNextElem >= pStack->base)
+    {
+        pDelElem = pNextElem--;
+        free(pDelElem);
+    }
+
+    return true;
 }
 
 bool StackIsNull(SeqStack *pStack)
@@ -53,7 +66,8 @@ bool Push(SeqStack *pStack, Elem *pElem)
 {
     if (StackIsFull(pStack))
     {
-        pStack->base = (Elem *)realloc(pStack->base, (pStack->stacksize + APPENSIZE) * sizeof(Elem));
+        pStack->base = (Elem *)realloc(pStack->base,
+                                       (pStack->stacksize + APPENSIZE) * sizeof(Elem));
         if (!pStack->base)
             return false;
         pStack->stacksize += APPENSIZE;
@@ -67,12 +81,12 @@ bool Push(SeqStack *pStack, Elem *pElem)
 
 bool Pop(SeqStack *pStack)
 {
-    Elem * delElem;
+    Elem *pDelElem;
     if (StackIsNull(pStack))
         return false;
-    delElem = pStack->top-1;
+    pDelElem = pStack->top - 1;
     pStack->top--;
-    free(delElem);
+    free(pDelElem);
 
     return true;
 }
