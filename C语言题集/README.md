@@ -66,19 +66,24 @@ int climb(int h, int m, int n)
 ```c
 void sort(int length, int *data)
 {
-    int temp, i, j, odd = 0;
+    int temp, i, j;
 
     for (i = 0; i < length - 1; i++)
+    {
         for (j = i + 1; j < length; j++)
-            if (data[j] > data[i] && data[j] % 2 == 1)
+            if ((data[j] > data[i] || data[i] % 2 != 1) 
+                 && data[j] % 2 == 1)
             {
                 temp = data[j];
                 data[j] = data[i];
                 data[i] = temp;
-                odd++;
             }
+        if (data[i] % 2 != 1)
+            break;
+    }
+        
 
-    for (i = odd; i < length - 1; i++)
+    for (; i < length - 1; i++)
         for (j = i + 1; j < length; j++)
             if (data[j] < data[i])
             {
