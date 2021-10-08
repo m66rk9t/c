@@ -58,3 +58,33 @@ int climb(int h, int m, int n)
 	return days;
 }
 ```
+
+#### 10.写一个函数，对整数型数组进行排序，要求：
++ 函数原型为 `void sort(int length, int *data);`，lengeh为数组的长度。
++ 函数需要区分数组中的奇数和偶数：排序后，奇数从大到小排列于数组的前端，偶数从小到大排列于数组的后端。
+
+```c
+void sort(int length, int *data)
+{
+    int temp, i, j, odd = 0;
+
+    for (i = 0; i < length - 1; i++)
+        for (j = i + 1; j < length; j++)
+            if (data[j] > data[i] && data[j] % 2 == 1)
+            {
+                temp = data[j];
+                data[j] = data[i];
+                data[i] = temp;
+                odd++;
+            }
+
+    for (i = odd; i < length - 1; i++)
+        for (j = i + 1; j < length; j++)
+            if (data[j] < data[i])
+            {
+                temp = data[j];
+                data[j] = data[i];
+                data[i] = temp;
+            }
+}
+```
