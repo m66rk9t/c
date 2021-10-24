@@ -88,3 +88,22 @@ void sort(int length, int *data)
             }
 }
 ```
+
+#### 11 编写一个函数ShowTxt，把任一个给定的文件名的字符文件的内容显示在计算机屏幕上。
+
+```c
+void ShowTxt(char *fn)
+{
+    FILE *fp;
+    char c;
+
+    if ((fp = fopen(fn, "r")) == NULL)
+    {
+        fprintf(stderr, "Cannot open file %s.\n", fn);
+        exit(EXIT_FAILURE);
+    }
+
+    while ((c = getc(fp)) != EOF)
+        putc(c, stdout);
+}
+```
