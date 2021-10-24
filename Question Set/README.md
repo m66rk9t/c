@@ -14,9 +14,9 @@
 
 ```c
 union data{
-	int i;	//假设int类型占2字节
-	char ch;//假设char类型占1字节
-	float f;//假设float类型占4字节
+    int i;  //假设int类型占2字节
+    char ch;//假设char类型占1字节
+    float f;//假设float类型占4字节
 }
 ```
 解析：编译器会为联合类型的变量分配足够的空间以便它能储存联合变量中占用最大字节的类型。
