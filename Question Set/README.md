@@ -111,5 +111,33 @@ void ShowTxt(char *fn)
 #### 12 已知D盘根目录下有一名为data1.txt的文件，其内容为：包含空格、回车和大小写英文字母的文本。请编写完整的C代码程序，去除该文本中的所有回车，并将大写英文字母都改为对应的小写字母。最终，将转换好的文本保存在当前目录下一个名为data2.txt的文本文件中。
 
 ```c
+/*need to be modified*/
+#include <stdio.h>
+#include <stdlib.h>
 
+int main(void)
+{
+    char *read= "data1.txt";
+    FILE *r;
+    char ch;
+
+    if ((r = fopen(read, "r+")) == NULL)
+    {
+        fprintf(stderr, "Cannot open file %s.\n", read);
+        exit(EXIT_FAILURE);
+    }
+
+    while ((ch = getc(r)) != EOF)
+    {
+        if (ch >= 'A' && ch <= 'Z')
+        {
+            fseek(r, -1L, SEEK_CUR);
+            putc(ch+32, r);
+        }
+    }
+
+    fclose(r);
+
+    return 0;
+}
 ```
