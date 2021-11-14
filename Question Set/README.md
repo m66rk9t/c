@@ -117,9 +117,11 @@ void ShowTxt(char *fn)
 
 int main(void)
 {
-    char *read= "data1.txt";
+    char *read = "data1.txt";
+    char *wirite = "data2.txt";
     FILE *r;
     char ch;
+    long pos;
 
     if ((r = fopen(read, "r+")) == NULL)
     {
@@ -127,13 +129,26 @@ int main(void)
         exit(EXIT_FAILURE);
     }
 
+    pos = ftell(r);
     while ((ch = getc(r)) != EOF)
     {
-        if (ch >= 'A' && ch <= 'Z')
+        if (ch != '\n' && ch != '\0')
         {
             fseek(r, -1L, SEEK_CUR);
-            putc(ch+32, r);
+            putc('\0', r);
+            ch = (ch >= 'A' && ch <= 'Z') ? ch + 32 : ch;
+            fseek(r, pos, SEEK_SET);
+            putc(ch, r);
+            pos = ftell(r);
         }
+    }
+
+    fseek(r, -1L, SEEK_END);
+    while ((ch = getc(r)) != '\0')
+    {   
+            fseek(r, -1L, SEEK_END);
+            putc('\0', r);
+            fseek(r, -2L, SEEK_END);
     }
 
     fclose(r);
