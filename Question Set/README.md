@@ -111,15 +111,13 @@ void ShowTxt(char *fn)
 #### 12 已知D盘根目录下有一名为data1.txt的文件，其内容为：包含空格、回车和大小写英文字母的文本。请编写完整的C代码程序，去除该文本中的所有回车，并将大写英文字母都改为对应的小写字母。最终，将转换好的文本保存在当前目录下一个名为data2.txt的文本文件中。
 
 ```c
-/*need to be modified*/
 #include <stdio.h>
 #include <stdlib.h>
 
 int main(void)
 {
-    char *read = "data1.txt";
-    char *wirite = "data2.txt";
-    FILE *r;
+    char *read = "D:\\\\data1.txt", *write = "D:\\\\data2.txt";
+    FILE *r, *w;
     char ch;
     long pos;
 
@@ -132,10 +130,10 @@ int main(void)
     pos = ftell(r);
     while ((ch = getc(r)) != EOF)
     {
+        fseek(r, -1L, SEEK_CUR);
+        putc('\0', r);
         if (ch != '\n' && ch != '\0')
         {
-            fseek(r, -1L, SEEK_CUR);
-            putc('\0', r);
             ch = (ch >= 'A' && ch <= 'Z') ? ch + 32 : ch;
             fseek(r, pos, SEEK_SET);
             putc(ch, r);
@@ -143,15 +141,18 @@ int main(void)
         }
     }
 
-    fseek(r, -1L, SEEK_END);
-    while ((ch = getc(r)) != '\0')
-    {   
-            fseek(r, -1L, SEEK_END);
-            putc('\0', r);
-            fseek(r, -2L, SEEK_END);
+    if ((w = fopen(write, "w")) == NULL)
+    {
+        fprintf(stderr, "Cannot open file %s.\n", write);
+        exit(EXIT_FAILURE);
     }
 
+    fseek(r, 0L, SEEK_SET);
+    while ((ch = getc(r)) != EOF)
+        putc(ch, w);
+
     fclose(r);
+    fclose(w);
 
     return 0;
 }
